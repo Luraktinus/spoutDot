@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Testing/TileMap.gd" type="Script" id=1]
+[ext_resource path="res://TileSet_1x1.tres" type="TileSet" id=2]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Camera.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Fonts/alphbeta.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 5 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+modulate = Color( 0.0627451, 0.0627451, 0.0627451, 1 )
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 1, 1 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+script = ExtResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+
+[node name="Camera2D" parent="." instance=ExtResource( 4 )]
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -203.5
+margin_top = 30.0
+margin_right = 203.5
+margin_bottom = 76.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Up you go.."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
